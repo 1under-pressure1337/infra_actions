@@ -57,5 +57,6 @@ jobs:
         passphrase: ${{ secrets.PASSPHRASE }}
         script: |
           sudo docker pull 1under-pressure1337/infra_actions 
+          #остановка всех контейнеров
           sudo docker stop $(sudo docker ps -a -q)
           sudo docker run --rm -d -p 5000:5000 1under-pressure1337/infra_actions 
